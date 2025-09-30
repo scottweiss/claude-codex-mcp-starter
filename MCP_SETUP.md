@@ -10,7 +10,7 @@ If you have Claude Desktop with MCP support and the Codex CLI installed:
 
 ```bash
 # Add Codex MCP server (replace with your actual API key)
-claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -m gpt-5 -c model_reasoning_effort="high"
+claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
 
 # Restart Claude Desktop
 # You're done! 🎉
@@ -64,7 +64,7 @@ For advanced control, edit the config file directly:
   "mcpServers": {
     "codex": {
       "command": "codex",
-      "args": ["mcp", "-m", "gpt-5", "-c", "model_reasoning_effort=high"],
+      "args": ["mcp", "-c", "model=gpt-5", "-c", "model_reasoning_effort=high"],
       "env": {
         "OPENAI_API_KEY": "your-api-key-here"
       }
@@ -79,7 +79,7 @@ For advanced control, edit the config file directly:
   "mcpServers": {
     "codex": {
       "command": "codex",
-      "args": ["mcp", "-m", "gpt-5", "-c", "model_reasoning_effort=high"],
+      "args": ["mcp", "-c", "model=gpt-5", "-c", "model_reasoning_effort=high"],
       "env": {
         "OPENAI_API_KEY": "your-api-key-here",
         "CODEX_SANDBOX": "workspace-write",
@@ -130,7 +130,7 @@ claude mcp list
 
 # Remove and re-add
 claude mcp remove codex
-claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -m gpt-5 -c model_reasoning_effort="high"
+claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
 ```
 
 ### Permission Issues
