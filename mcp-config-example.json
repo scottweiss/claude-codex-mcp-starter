@@ -3,7 +3,7 @@
     "codex": {
       "comment": "Main Codex integration with GPT-5 high reasoning",
       "command": "codex",
-      "args": ["mcp", "-m", "gpt-5", "-c", "model_reasoning_effort=high"],
+      "args": ["mcp", "-c", "model=gpt-5", "-c", "model_reasoning_effort=high"],
       "env": {
         "OPENAI_API_KEY": "your-openai-api-key",
         "CODEX_SANDBOX": "workspace-write",

@@ -39,10 +39,10 @@ A comprehensive guide for integrating AI assistants into your development workfl
 npm install -g @openai/codex
 
 # Add Codex MCP server to Claude (macOS/Linux)
-claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -m gpt-5 -c model_reasoning_effort="high"
+claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
 
 # Windows PowerShell variant
-claude mcp add codex -s user -e OPENAI_API_KEY=$env:OPENAI_API_KEY -- codex mcp -m gpt-5 -c model_reasoning_effort="high"
+claude mcp add codex -s user -e OPENAI_API_KEY=$env:OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
 
 # Restart Claude Desktop - Done! 🎉
 ```
