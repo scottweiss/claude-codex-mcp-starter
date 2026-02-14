@@ -1,3 +1,9 @@
+# BASICALLY DEPRECATED 
+
+This starter has not been updated since September 30th, 2025. The AI space moves incredibly fast.
+
+The best method to get your codexes and claudes working together is to ask them directly and have them take your project into account and build their communications around that. They know what they need more than we do.
+
 # AI Assistant Documentation Hub
 
 A comprehensive guide for integrating AI assistants into your development workflow. These templates help establish consistent, effective collaboration between different AI models and human developers.
