@@ -260,6 +260,14 @@ Before marking task complete:
 
 ### Codex CLI Mode Specifics
 
+**Installation:**
+- `npm install -g @openai/codex` (npm)
+- `brew install --cask codex` (Homebrew, macOS)
+
+**Authentication:**
+- Sign in with ChatGPT (Plus/Pro/Team/Edu/Enterprise): run `codex`, select "Sign in with ChatGPT"
+- API key: set `OPENAI_API_KEY` environment variable
+
 **Default Configuration:**
 - Filesystem: `workspace-write` (can modify project files)
 - Network: Restricted (requires approval for npm install, etc.)
@@ -272,6 +280,7 @@ Before marking task complete:
 - **Editing**: Applies minimal diffs via `apply_patch`
 - **Commits**: No auto-commits/branches unless explicitly requested
 - **Validation**: Runs tests in non-interactive mode proactively
+- **Non-interactive**: Use `codex exec` for scripted/CI workflows
 
 **Requires Approval For:**
 - Destructive operations (`rm -rf`, `git reset --hard`)
@@ -304,9 +313,10 @@ assistants:
     capabilities: ["architecture", "debugging", "review"]
     tools: ["read", "write", "search", "test"]
     
-  gpt4:
+  codex:
     capabilities: ["implementation", "docs", "refactor"]
     tools: ["code_generation", "test_generation"]
+    model: "gpt-5.3"
     
   copilot:
     capabilities: ["autocomplete", "suggestions"]

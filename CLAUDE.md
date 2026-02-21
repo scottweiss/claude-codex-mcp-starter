@@ -227,6 +227,17 @@ For complex tasks, consider using specialized agents:
 
 ## 🤝 Multi-Model Collaboration
 
+### Claude Code — Built-In Capabilities
+
+Claude Code ships with several features that are useful to know about when setting up collaboration workflows:
+
+- **`/init`** — Run `/init` in a project to auto-generate a `CLAUDE.md` file scoped to your codebase.
+- **Extended thinking** — For harder problems, prompt with `think`, `think hard`, or `ultrathink` to engage deeper reasoning before acting.
+- **Web search** — Claude Code can search the web natively; no extra MCP server needed for basic research tasks.
+- **MCP management** — Add, list, and remove MCP servers with `claude mcp add`, `claude mcp list`, `claude mcp remove`.
+- **Settings file** — Per-project overrides live in `.claude/settings.json`; global defaults in `~/.claude/settings.json`.
+- **GitHub Actions** — Claude Code can be triggered directly inside GitHub Actions workflows via the [`claude-code-action`](https://github.com/anthropics/claude-code-action).
+
 ### MCP Server Integration (When Available)
 
 If your environment supports MCP (Model Context Protocol) servers, you can leverage direct integration:
@@ -247,7 +258,7 @@ mcp_servers:
 
 ### Working with Other AI Assistants
 
-When working with multiple AI models (Claude, GPT-4, Codex, etc.), establish clear roles:
+When working with multiple AI models (Claude, GPT-5, Codex, etc.), establish clear roles:
 
 ### Collaboration Visibility Protocol
 
@@ -271,7 +282,7 @@ Consider using multiple models for:
 
 ### Task Assignment by Strength
 
-**Primary Assistant (Claude/GPT-4) handles:**
+**Primary Assistant (Claude Code) handles:**
 - Architecture design and planning
 - Complex reasoning and debugging
 - Security analysis and review

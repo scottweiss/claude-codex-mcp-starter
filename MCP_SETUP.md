@@ -10,7 +10,7 @@ If you have Claude Desktop with MCP support and the Codex CLI installed:
 
 ```bash
 # Add Codex MCP server (replace with your actual API key)
-claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
+claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5.3 -c model_reasoning_effort="high"
 
 # Restart Claude Desktop
 # You're done! 🎉
@@ -27,10 +27,23 @@ That's it! Claude can now delegate tasks to Codex.
 ## 📋 Prerequisites
 
 - Claude Desktop (with MCP support)
-- Codex CLI installed (`npm install -g @openai/codex`)
-- OpenAI API key
+- Codex CLI installed:
+  - `npm install -g @openai/codex` (npm), or
+  - `brew install --cask codex` (Homebrew, macOS)
+- OpenAI API key **or** a ChatGPT Plus/Pro/Team/Edu/Enterprise account
 
 ## 🔧 Alternative Setup Methods
+
+### Method 0: ChatGPT Plan Sign-In (No API Key Required)
+
+If you have a ChatGPT Plus, Pro, Team, Edu, or Enterprise plan, you can authenticate without an API key:
+
+```bash
+# Run Codex and select "Sign in with ChatGPT"
+codex
+# Then add the MCP server (no OPENAI_API_KEY env needed)
+claude mcp add codex -s user -- codex mcp -c model=gpt-5.3 -c model_reasoning_effort="high"
+```
 
 ### Method 1: Using Node-based Codex MCP Server
 
@@ -46,7 +59,7 @@ npm run build
 # Add to Claude
 claude mcp add codex -s user \
   -e OPENAI_API_KEY=$OPENAI_API_KEY \
-  -e OPENAI_MODEL=gpt-5 \
+  -e OPENAI_MODEL=gpt-5.3 \
   -- node /absolute/path/to/codex-mcp-server/dist/index.js
 ```
 
@@ -55,7 +68,8 @@ claude mcp add codex -s user \
 For advanced control, edit the config file directly:
 
 **Location:**
-- macOS/Linux: `~/.config/claude/claude_desktop_config.json`
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Linux: `~/.config/Claude/claude_desktop_config.json`
 - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
 **Basic Configuration:**
@@ -64,7 +78,7 @@ For advanced control, edit the config file directly:
   "mcpServers": {
     "codex": {
       "command": "codex",
-      "args": ["mcp", "-c", "model=gpt-5", "-c", "model_reasoning_effort=high"],
+      "args": ["mcp", "-c", "model=gpt-5.3", "-c", "model_reasoning_effort=high"],
       "env": {
         "OPENAI_API_KEY": "your-api-key-here"
       }
@@ -79,7 +93,7 @@ For advanced control, edit the config file directly:
   "mcpServers": {
     "codex": {
       "command": "codex",
-      "args": ["mcp", "-c", "model=gpt-5", "-c", "model_reasoning_effort=high"],
+      "args": ["mcp", "-c", "model=gpt-5.3", "-c", "model_reasoning_effort=high"],
       "env": {
         "OPENAI_API_KEY": "your-api-key-here",
         "CODEX_SANDBOX": "workspace-write",
@@ -130,7 +144,7 @@ claude mcp list
 
 # Remove and re-add
 claude mcp remove codex
-claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
+claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5.3 -c model_reasoning_effort="high"
 ```
 
 ### Permission Issues
@@ -149,9 +163,9 @@ claude mcp add my-server -- cmd /c npx -y @some/package
 Create a `.env` file for your project:
 
 ```bash
-# Required
+# Required (if not using ChatGPT plan sign-in)
 OPENAI_API_KEY=sk-...
-OPENAI_MODEL=gpt-5  # Best with high reasoning effort
+OPENAI_MODEL=gpt-5.3  # Best with high reasoning effort
 MODEL_REASONING_EFFORT=high  # For maximum quality
 
 # Optional
@@ -187,9 +201,9 @@ Expected response from Codex:
 ## 📚 Resources
 
 - [Claude MCP Documentation](https://docs.anthropic.com/claude/docs/mcp)
-- [Codex CLI Documentation](https://github.com/openai/codex)
+- [Codex CLI Documentation](https://developers.openai.com/codex)
 - [MCP Protocol Spec](https://modelcontextprotocol.io)
 
 ---
 
-*Note: GPT-5 with high reasoning effort provides best results. Fallback options: gpt-4o, gpt-3.5-turbo*
+*Note: GPT-5.3 with high reasoning effort provides best results. Fallback options: gpt-5, gpt-4o, gpt-4.1*
