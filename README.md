@@ -45,10 +45,10 @@ codex  # then select "Sign in with ChatGPT"
 # export OPENAI_API_KEY=sk-...
 
 # Add Codex MCP server to Claude (macOS/Linux)
-claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
+claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5.3 -c model_reasoning_effort="high"
 
 # Windows PowerShell variant
-claude mcp add codex -s user -e OPENAI_API_KEY=$env:OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
+claude mcp add codex -s user -e OPENAI_API_KEY=$env:OPENAI_API_KEY -- codex mcp -c model=gpt-5.3 -c model_reasoning_effort="high"
 
 # Restart Claude Desktop - Done! 🎉
 ```

@@ -313,9 +313,10 @@ assistants:
     capabilities: ["architecture", "debugging", "review"]
     tools: ["read", "write", "search", "test"]
     
-  gpt4:
+  codex:
     capabilities: ["implementation", "docs", "refactor"]
     tools: ["code_generation", "test_generation"]
+    model: "gpt-5.3"
     
   copilot:
     capabilities: ["autocomplete", "suggestions"]

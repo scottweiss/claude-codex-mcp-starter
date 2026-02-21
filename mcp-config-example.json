@@ -1,9 +1,9 @@
 {
   "mcpServers": {
     "codex": {
-      "comment": "Main Codex integration with GPT-5 high reasoning. Install: npm i -g @openai/codex OR brew install --cask codex",
+      "comment": "Main Codex integration with GPT-5.3 high reasoning. Install: npm i -g @openai/codex OR brew install --cask codex",
       "command": "codex",
-      "args": ["mcp", "-c", "model=gpt-5", "-c", "model_reasoning_effort=high"],
+      "args": ["mcp", "-c", "model=gpt-5.3", "-c", "model_reasoning_effort=high"],
       "env": {
         "OPENAI_API_KEY": "your-openai-api-key",
         "CODEX_SANDBOX": "workspace-write",
