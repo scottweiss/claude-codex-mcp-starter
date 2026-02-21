@@ -247,7 +247,7 @@ mcp_servers:
 
 ### Working with Other AI Assistants
 
-When working with multiple AI models (Claude, GPT-4, Codex, etc.), establish clear roles:
+When working with multiple AI models (Claude, GPT-5, Codex, etc.), establish clear roles:
 
 ### Collaboration Visibility Protocol
 

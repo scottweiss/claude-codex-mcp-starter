@@ -1,9 +1,3 @@
-# BASICALLY DEPRECATED 
-
-This starter has not been updated since September 30th, 2025. The AI space moves incredibly fast.
-
-The best method to get your codexes and claudes working together is to ask them directly and have them take your project into account and build their communications around that. They know what they need more than we do.
-
 # AI Assistant Documentation Hub
 
 A comprehensive guide for integrating AI assistants into your development workflow. These templates help establish consistent, effective collaboration between different AI models and human developers.
@@ -41,8 +35,14 @@ A comprehensive guide for integrating AI assistants into your development workfl
 ### 1. Enable MCP Integration (One Command!)
 
 ```bash
-# Install Codex CLI if needed
-npm install -g @openai/codex
+# Install Codex CLI (choose your preferred method)
+npm install -g @openai/codex       # via npm
+brew install --cask codex          # via Homebrew (macOS)
+
+# Sign in with your ChatGPT account (Plus/Pro/Team/Edu/Enterprise plans)
+codex  # then select "Sign in with ChatGPT"
+# OR set your OpenAI API key for API key auth:
+# export OPENAI_API_KEY=sk-...
 
 # Add Codex MCP server to Claude (macOS/Linux)
 claude mcp add codex -s user -e OPENAI_API_KEY=$OPENAI_API_KEY -- codex mcp -c model=gpt-5 -c model_reasoning_effort="high"
@@ -116,6 +116,8 @@ conventions:
 - **File Editing**: Uses minimal diffs via `apply_patch`, no auto-commits
 - **Reading**: Processes ~250 lines at a time, prefers `rg` for search
 - **Network**: Restricted by default, requires approval for `npm install`, etc.
+- **Auth**: Supports ChatGPT plan sign-in (Plus/Pro/Team/Edu/Enterprise) or API key
+- **IDE**: Available as a plugin for VS Code, Cursor, and Windsurf via [IDE integration](https://developers.openai.com/codex/ide)
 
 ### Visibility Protocol
 
@@ -260,7 +262,7 @@ Track these across AI collaborations:
 
 ### Official Documentation
 - [Claude Documentation](https://docs.anthropic.com)
-- [OpenAI Platform](https://platform.openai.com)
+- [Codex CLI Documentation](https://developers.openai.com/codex)
 - [GitHub Copilot](https://copilot.github.com)
 
 ### Community Resources
@@ -308,4 +310,4 @@ These templates are provided as-is for use in any project. Customize freely for 
 
 ---
 
-*Version 1.0 - Generic AI Assistant Documentation Templates*
+*Version 2.0 - Updated February 2026*

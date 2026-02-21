@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "codex": {
-      "comment": "Main Codex integration with GPT-5 high reasoning",
+      "comment": "Main Codex integration with GPT-5 high reasoning. Install: npm i -g @openai/codex OR brew install --cask codex",
       "command": "codex",
       "args": ["mcp", "-c", "model=gpt-5", "-c", "model_reasoning_effort=high"],
       "env": {
